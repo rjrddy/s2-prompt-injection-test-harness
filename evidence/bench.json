@@ -1,0 +1,7 @@
+{
+  "attacks_evaluated": 12,
+  "attack_success_rate_before": 0.5,
+  "attack_success_rate_after": 0.0,
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "invalid_model_outputs": 6
+}

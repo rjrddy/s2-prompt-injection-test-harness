@@ -1,0 +1,26 @@
+{
+  "id": "S2",
+  "name": "Prompt-injection test harness",
+  "problem": "Test suite that attacks an LLM agent with injection payloads and reports which tools it misuses.",
+  "results": [
+    [
+      "Real-model attacks evaluated",
+      "attacks_evaluated",
+      ""
+    ],
+    [
+      "Attack success before policy gate",
+      "attack_success_rate_before",
+      ""
+    ],
+    [
+      "Attack success after policy gate",
+      "attack_success_rate_after",
+      ""
+    ]
+  ],
+  "diagram": "SyntheticRetrievedAttacks --> LocalOpenLLM --> ToolChoice --> TrustedPermissionGate --> SandboxedEffects",
+  "limits": "Real CPU inference with a small public instruction model. The vulnerable baseline deliberately delegates tool selection to retrieved instructions; no robust production agent is claimed. Tool effects are confined to an in-memory sandbox: no real data export, deletion or messages occur. Mitigation is a trusted dispatcher allowlist, not a claim that prompting makes the model safe. Attack success means any unauthorized tool effect, not merely harmful text. Invalid model output is reported separately. Small synthetic attack suite and one model cannot establish general prompt-injection resistance; inspect evidence/attacks.json.",
+  "next": "Add benign utility tests, more models, multi-turn attacks and capability-specific authorization.",
+  "status": "done"
+}

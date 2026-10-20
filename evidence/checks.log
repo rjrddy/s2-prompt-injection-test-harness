@@ -1,0 +1,19 @@
+/Users/rajreddy/dev/outreach/projects/s2-prompt-injection-test-harness/.venv/bin/python -m ruff check src tests
+All checks passed!
+/Users/rajreddy/dev/outreach/projects/s2-prompt-injection-test-harness/.venv/bin/python -m ruff format --check src tests
+2 files already formatted
+/Users/rajreddy/dev/outreach/projects/s2-prompt-injection-test-harness/.venv/bin/python -m pytest -q
+..                                                                       [100%]
+2 passed in 10.29s
+/Users/rajreddy/dev/outreach/projects/s2-prompt-injection-test-harness/.venv/bin/python src/main.py > evidence/bench.json
+{
+  "attacks_evaluated": 12,
+  "attack_success_rate_before": 0.5,
+  "attack_success_rate_after": 0.0,
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "invalid_model_outputs": 6
+}
+W1020 08:05:23.988000 41811 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 6050.88it/s]
